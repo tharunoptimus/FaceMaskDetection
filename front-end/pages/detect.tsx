@@ -1,26 +1,8 @@
 import type { NextPage } from 'next'
 import React, { useEffect, useRef } from "react";
-
+import Feed from "./components/feed";
 const Home: NextPage = () => {
-    const videoRef: any = useRef(null);
-
-    useEffect(() => {
-      getVideo();
-    }, [videoRef]);
-  
-    const getVideo = () => {
-      navigator.mediaDevices
-        .getUserMedia({ video: { width: 300 } })
-        .then(stream => {
-          let video = videoRef.current;
-          video.srcObject = stream;
-          video.play();
-        })
-        .catch(err => {
-          console.error("error:", err);
-        });
-    };
-  
+      
     return (
       <>
         <div className="wrapper">
@@ -31,24 +13,19 @@ const Home: NextPage = () => {
                 </div>
             </div>
 
-            <div className="videoFeed">
-                <video ref={videoRef} />
+            <div className="feedsContainer">
+                <Feed percent="Percentage 1"/>
+                <Feed percent="Percentage 2"/>
             </div>
 
             <div className="dataAndOptions">
-                <div className="cnnScore scorebox">
-                    <span className="scoreTitle">CNN Score</span>
-                    <span className="score">N/A</span>
-                </div>
+
                 <div className="captureButtonContainer">
                     <button>
                         <span>Capture &#38; Detect</span>
                     </button>
                 </div>
-                <div className="mobileNetScore scorebox">
-                    <span className="scoreTitle">MobileNet Score</span>
-                    <span className="score">N/A</span>
-                </div>
+                
             </div>
 
 
@@ -56,7 +33,17 @@ const Home: NextPage = () => {
 
 
         <style jsx>{`
-        
+
+            .feedsContainer {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: space-evenly;
+                align-items: center;
+
+                padding: 2rem 0.5rem;
+            }
+
             .wrapper {
                 display: flex;
                 flex-direction: column;
