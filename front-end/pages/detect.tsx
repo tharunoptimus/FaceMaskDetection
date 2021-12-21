@@ -5,7 +5,7 @@ const Home: NextPage = () => {
       
     return (
       <>
-        <div className="wrapper">
+        <div className="wrapper mainFrame">
 
             <div className="heading">
                 <div className="title">
