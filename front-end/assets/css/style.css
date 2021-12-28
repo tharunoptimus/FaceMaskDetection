@@ -1,0 +1,56 @@
+* {
+    font-family: "Inter", system-ui;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.2rem;
+    gap: 5px;
+    
+}
+
+.coolShadow {
+    border-color: rgba(85,88,103, 0.2);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+#video {
+    border-radius: 0.5rem;
+    border-width: 1px;
+}
+
+#masked {
+    background-color: rgba(0, 118, 255, 0.9);
+    border: 1px solid rgba(0, 118, 255, 0.9);
+    color: #fff;
+    padding: 0.25rem 1rem;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.8rem;
+    border-radius: 5px;
+    display: none;
+}
+
+#noMask {
+    background-color: #e74c3c;
+    border: 1px solid #e74c3c;
+    color: #fff;
+    padding: 0.25rem 1rem;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.8rem;
+    border-radius: 5px;
+    display: none;
+}

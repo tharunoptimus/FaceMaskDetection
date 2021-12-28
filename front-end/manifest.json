@@ -1,0 +1,17 @@
+{
+    "short_name": "Detect",
+    "name": "Mask Detection",
+    "description": "Web App to Detect Face Mask",
+    "icons": [
+      {
+        "src": "./assets/images/logo.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "theme_color": "#FFFFFF"
+  }
