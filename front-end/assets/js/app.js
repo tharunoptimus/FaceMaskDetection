@@ -3,7 +3,7 @@ let video = document.querySelector("#video")
 
 const webcamElement = document.getElementById("webcam")
 webcamElement.style.display = "none"
-const model = tf.loadLayersModel('./model/model.json').then( _ => console.log("CNN Model Loaded"))
+const model = tf.loadLayersModel('./model/model.json').then( _ => console.log("MobileNet v2 Model Loaded"))
 
 let text = document.getElementById("text")
 
@@ -12,7 +12,7 @@ async function app() {
 	document.querySelector("h1").innerText = "Downloading the Model..."
 	net = await mobilenet.load()
 
-	// Create an object from Tensorflow.js data API which could capture image
+	// Create an object from Tensorflow.js data API which would capture image
 	// from the web camera as Tensor.
 
 	setInterval(async () => {
@@ -93,6 +93,8 @@ function isMasked(value) {
     maskText.style.display = "none"
     noMaskText.style.display = "none"
 
-    value ? maskText.style.display = "block" : noMaskText.style.display = "block"
+    requestAnimationFrame(() => {
+        value ? maskText.style.display = "block" : noMaskText.style.display = "block"
+    })
 
 }
