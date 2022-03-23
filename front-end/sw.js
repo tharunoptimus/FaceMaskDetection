@@ -1,4 +1,4 @@
-const CACHE = "content-v1"
+const CACHE = "content-v2"
 const OFFLINE = "/offline.html"
 
 const AUTO_CACHE = [OFFLINE, "/"]
@@ -32,10 +32,7 @@ self.addEventListener("activate", (event) => {
 })
 
 self.addEventListener("fetch", (event) => {
-	if (
-		!event.request.url.startsWith(self.location.origin) ||
-		event.request.method !== "GET"
-	) {
+	if ( event.request.method !== "GET" ) {
 		return void event.respondWith(fetch(event.request))
 	}
 
